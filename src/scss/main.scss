@@ -1,10 +1,67 @@
+// ===== Font, variables and reset ===== //
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+// Variables
+$font-primary: 'Roboto',sans-serif;
+$clr-primary: #efedd6;
+$clr-text: #2c2a2a;
+$clr-text-light: #ffffff;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    font-size: clamp(1rem, -0.0534rem + 4.0712vw, 2rem);
+    scroll-behavior: smooth;
+}
+
 body {
+    font-family: $font-primary;
+    overflow-x: hidden;
+    color: $clr-text;
+    background-color: $clr-primary;
+}
+
+.main {
     min-height: 100vh;
-    background-color: burlywood;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 2em;
+    text-align: center;
+
+    &__h1 {
+        margin-block: 2em;
+        font-weight: 700;
+    }
+
+    &__box {
+        color: $clr-text-light;
+        background: rgb(74, 99, 208);
+        background: linear-gradient(90deg, rgba(74, 99, 208, 1) 0%, rgb(150, 148, 163) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // width: clamp(200px, 60vw, 400px);
+        width: 80%;
+        min-height: 200px;
+        margin-block: 1em;
+        border-radius: .5em;
+        box-shadow: 2px 4px 5px $clr-text;
+        transform: translateX(400%);
+        transition: transform .5s ease;
+    }
+
+    &__box:nth-of-type(even){
+        transform: translateX(-400%);
+    }
+
+    .main__box--active {
+        transform: translateX(0);
+    }
 }
