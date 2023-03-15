@@ -27,7 +27,7 @@ body {
   text-align: center;
 }
 .main__h1 {
-  margin-block: 2em;
+  margin-block: 1em;
   font-weight: 700;
 }
 .main__box {
@@ -35,6 +35,7 @@ body {
   background: rgb(74, 99, 208);
   background: linear-gradient(90deg, rgb(74, 99, 208) 0%, rgb(150, 148, 163) 100%);
   display: flex;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   width: 80%;
